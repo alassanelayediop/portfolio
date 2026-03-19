@@ -1,0 +1,141 @@
+@media (max-width:1199px)
+{
+    .section .container 
+    {
+        padding-top: 70px;
+    }
+
+    .aside
+    {
+        left: -250px;
+    }
+
+    .aside.open
+    {
+        left: 0;
+    }
+
+    .aside .nav-toggler
+    {
+        display: flex;
+        left: 30px;
+    }
+
+    .aside .nav-toggler.open
+    {
+        left: 300px;
+    }
+
+    .section
+    {
+        left: 0;
+    }
+
+    .section.open
+    {
+        left: 250px;
+    }
+
+    /* .main-content
+    {
+        padding-left: 0;
+    } */
+
+    .about .about-content .personal-info .info-item p span
+    {
+        display: block;
+        margin-left: 0;
+    }
+}
+
+@media (max-width:991px)
+{
+    .row-contact 
+    {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .row-portfolio 
+    {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-item
+    {
+        flex: 0 0 50%;
+        max-width: 100%;
+    }
+
+    .rowL, .rowR
+    {
+        width: 50%;
+    }
+
+    .row3
+    {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+    }
+
+    .home .home-info
+    {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .home .home-img
+    {
+        display: none;
+    }
+}
+
+@media (max-width:767px)
+{
+    .about .about-content .education,
+    .about .about-content .experience,
+    .about .about-content .skills,
+    .about .about-content .personal-info
+    {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .rowL, .rowR, .row3
+    {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .row3
+    {
+        display: block;
+    }
+
+    .row-portfolio 
+    {
+        display: block;
+        margin: auto;
+    }
+
+    .row-contact 
+    {
+        width: 100%;
+        display: block;
+    }
+
+    .contact-form .col-6
+    {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .contact-form .btn
+    {
+        width: 100%;
+    }
+}
