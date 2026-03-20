@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/icon-portofolio.ico" type="image/x-icon">
-    <title>MyPortofolio</title>
+    <title>Alassane Laye Diop — Portfolio</title>
     <!-- ======= CSS Files ======= -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/media-query.css">
@@ -17,11 +17,91 @@
     <link rel="stylesheet" href="css/skins/color-3.css" class="alternate-style" title="color-3" disabled>
     <link rel="stylesheet" href="css/skins/color-4.css" class="alternate-style" title="color-4" disabled>
     <link rel="stylesheet" href="css/skins/color-5.css" class="alternate-style" title="color-5" disabled>
-
-    <!-- Icones Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="css/style-switcher.css">
+
+    <style>
+        /* ===== Portfolio Overlay ===== */
+        .portfolio .portfolio-item-inner {
+            position: relative;
+            overflow: hidden;
+        }
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.72);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            padding: 16px;
+            text-align: center;
+        }
+        .portfolio-item-inner:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        .portfolio-overlay h4 {
+            color: #fff;
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .portfolio-overlay p {
+            color: rgba(255,255,255,0.75);
+            font-size: 13px;
+            margin-bottom: 14px;
+            line-height: 1.4;
+        }
+        .portfolio-overlay .btn-overlay {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--skin-color);
+            color: #fff;
+            padding: 7px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        .portfolio-overlay .btn-overlay:hover {
+            opacity: 0.85;
+        }
+        .portfolio-overlay .btn-overlay i {
+            font-size: 12px;
+        }
+
+        /* ===== Skills — tag badges ===== */
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding-top: 6px;
+        }
+        .skill-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: var(--bg-black-100);
+            color: var(--text-black-700);
+            border: 1.5px solid var(--bg-black-50);
+            border-radius: 25px;
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .skill-tag i {
+            color: var(--skin-color);
+            font-size: 14px;
+        }
+        .skill-tag:hover {
+            border-color: var(--skin-color);
+            color: var(--skin-color);
+        }
+    </style>
 </head>
 <body class="dark">
     <!-- ======= Main Container Start ======= -->
@@ -50,9 +130,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="home-info padd-15">
-                            <h3 class="hello">Salut, mon c'est <span class="name">Alassane Laye Diop</span></h3>
-                            <h3 class="my-profession">Suis intéressé par <span class="typing">le développement</span></h3>
-                            <p>Bienvenue sur ma plateforme ! Découvrez mes compétences en développement web et design à travers mes projets, chacun représentant une étape clé de mon parcours professionnel. J'espère que vous y trouverez de l'inspiration.</p>
+                            <h3 class="hello">Salut, je m'appelle <span class="name">Alassane Laye Diop</span></h3>
+                            <h3 class="my-profession">Passionné par <span class="typing">le développement</span></h3>
+                            <p>Bienvenue sur ma plateforme ! Découvrez mes compétences en développement web, Java/JEE et sécurité informatique à travers mes projets, chacun représentant une étape clé de mon parcours académique et professionnel. J'espère que vous y trouverez de l'inspiration.</p>
 
                             <!-- ======= Link Social Media ======= -->
                              <div class="social-link">
@@ -73,170 +153,139 @@
                             <a href="#" class="btn download-cv">Télécharger le CV</a>
                         </div>
                         <div class="home-img padd-15">
-                            <img src="img/FakeU.jpg" alt="Mon photo" srcset="">
+                            <img src="img/FakeU.jpg" alt="Mon photo">
                         </div>
                     </div>
                 </div>
             </section>
             <!-- ======= Home Section End ======= -->
+
             <!-- ======= About Section Start ======= -->
             <section class="about section" id="about">
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
-                            <h2>About Me</h2>
+                            <h2>À Propos</h2>
                         </div>
                     </div>
                     <div class="row">
                         <div class="about-content padd-15">
                             <div class="row">
                                 <div class="about-text padd-15">
-                                    <h3>I'm Alassane Laye Diop and <span>Web Developer</span></h3>
-                                    <p>Passionné par le développement web et les nouvelles technologies, je suis un développeur web spécialisé dans la conception et la création d'expériences numériques modernes. J'aime transformer des idées en interfaces intuitives et performantes, tout en accordant une attention particulière au design et à l’expérience utilisateur.</p>
+                                    <h3>Je suis Alassane Laye Diop — <span>Développeur & Étudiant en Master TDSI</span></h3>
+                                    <p>Passionné par le développement logiciel et la cybersécurité, je suis actuellement en Master 1 TDSI (Technologies des Systèmes d'Information) à l'Université Cheikh Anta Diop de Dakar. J'aime concevoir des applications robustes, m'attarder sur l'expérience utilisateur et explorer les enjeux de sécurité des systèmes modernes.</p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="personal-info padd-15">
                                     <div class="row">
                                         <div class="info-item padd-15">
-                                            <p>Birthday : <span>17 May 2005</span></p>
+                                            <p>Naissance : <span>17 Mai 2005</span></p>
                                         </div>
                                         <div class="info-item padd-15">
-                                            <p>Age : <span>19 <strong>ans</strong></span></p>
+                                            <p>Âge : <span>20 <strong>ans</strong></span></p>
                                         </div>
                                         <div class="info-item padd-15">
                                             <p>Email : <span class="petit">alassanerekrek@gmail.com</span></p>
                                         </div>
                                         <div class="info-item padd-15">
-                                            <p>Phone : <span>+221 78 555 42 20</span></p>
+                                            <p>Téléphone : <span>+221 78 555 42 20</span></p>
                                         </div>
                                         <div class="info-item padd-15">
-                                            <p>Location : <span>Dakar / Yeumbeul</span></p>
+                                            <p>Localisation : <span>Dakar / Yeumbeul</span></p>
                                         </div>
                                         <div class="info-item padd-15">
-                                            <p>Freelance : <span>Not yet</span></p>
+                                            <p>Freelance : <span>Disponible</span></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="buttons padd-15">
-                                            <a href="#contact" data-section-index="1" class="btn hire-me">Contactez moi</a>
+                                            <a href="#contact" data-section-index="1" class="btn hire-me">Contactez-moi</a>
                                         </div>
                                     </div>
                                 </div>
+
+                                <!-- ======= Skills as Tags ======= -->
                                 <div class="skills padd-15">
-                                    <div class="row">
-                                        <div class="skill-item padd-15">
-                                            <h5>Bootstrap</h5>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 10%;"></div>
-                                                <div class="skill-percent">10%</div>
-                                            </div>
-                                        </div>
-                                        <div class="skill-item padd-15">
-                                            <h5>Python</h5>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 5%;"></div>
-                                                <div class="skill-percent">05%</div>
-                                            </div>
-                                        </div>
-                                        <div class="skill-item padd-15">
-                                            <h5>JAVA</h5>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 6%;"></div>
-                                                <div class="skill-percent">06%</div>
-                                            </div>
-                                        </div>
-                                        <div class="skill-item padd-15">
-                                            <h5>Angular</h5>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 08%;"></div>
-                                                <div class="skill-percent">08%</div>
-                                            </div>
-                                        </div>
+                                    <h4 style="margin-bottom: 18px; color: var(--text-black-900);">Compétences techniques</h4>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag"><i class="fab fa-html5"></i> Bootstrap</span>
+                                        <span class="skill-tag"><i class="fab fa-js-square"></i> JavaScript</span>
+                                        <span class="skill-tag"><i class="fab fa-java"></i> Java / JEE</span>
+                                        <span class="skill-tag"><i class="fas fa-leaf"></i> Spring Boot (bases)</span>
+                                        <span class="skill-tag"><i class="fab fa-angular"></i> Angular (bases)</span>
+                                        <span class="skill-tag"><i class="fas fa-database"></i> PostgreSQL</span>
+                                        <span class="skill-tag"><i class="fas fa-shield-alt"></i> Cybersécurité (apprentissages)</span>
+                                        <span class="skill-tag"><i class="fab fa-git-alt"></i> Git / GitHub</span>
+                                        <span class="skill-tag"><i class="fab fa-linux"></i> Linux</span>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="row">
                                 <div class="education padd-15">
-                                    <h3 class="title">Education</h3>
+                                    <h3 class="title">Formation</h3>
                                     <div class="row">
                                         <div class="timeline-box padd-15">
                                             <div class="timeline shadow-dark">
-                                                <!-- ===== timeline item ===== -->
                                                 <div class="timeline-item">
                                                     <div class="circle-dot"></div>
                                                     <h3 class="timeline-date">
-                                                        <i class="fa fa-calendar"></i> 2022 - now
+                                                        <i class="fa fa-calendar"></i> 2025 - en cours
+                                                    </h3>
+                                                    <h4 class="timeline-title">Master 1 — TDSI</h4>
+                                                    <p class="timeline-text">Université Cheikh Anta Diop de Dakar — Technologies des Systèmes d'Information (Laboratoire LACGAA)</p>
+                                                </div>
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> 2022 - 2025
                                                     </h3>
                                                     <h4 class="timeline-title">Licence en Informatique</h4>
-                                                    <p class="timeline-text">Université Cheikh Anta Diop</p>
+                                                    <p class="timeline-text">Université Cheikh Anta Diop de Dakar</p>
                                                 </div>
-                                                <!-- ===== timeline item ===== -->
                                                 <div class="timeline-item">
                                                     <div class="circle-dot"></div>
                                                     <h3 class="timeline-date">
                                                         <i class="fa fa-calendar"></i> 2019 - 2022
                                                     </h3>
                                                     <h4 class="timeline-title">Lycée</h4>
-                                                    <p class="timeline-text">Baccalauréat S2 - Lycée Seydina Limamou Laye (2022)</p>
+                                                    <p class="timeline-text">Baccalauréat S2 — Lycée Seydina Limamou Laye (2022)</p>
                                                 </div>
-                                                <!-- ===== timeline item ===== -->
                                                 <div class="timeline-item">
                                                     <div class="circle-dot"></div>
                                                     <h3 class="timeline-date">
                                                         <i class="fa fa-calendar"></i> 2015 - 2019
                                                     </h3>
                                                     <h4 class="timeline-title">Collège</h4>
-                                                    <p class="timeline-text">Brevet de fin d'étude moyen - Cours Privée Gallilée (2019)</p>
-                                                </div>
-                                                <!-- ===== timeline item ===== -->
-                                                <div class="timeline-item">
-                                                    <div class="circle-dot"></div>
-                                                    <h3 class="timeline-date">
-                                                        <i class="fa fa-calendar"></i> 2009 - 2015
-                                                    </h3>
-                                                    <h4 class="timeline-title">Elémentaire</h4>
-                                                    <p class="timeline-text">Certificat de fin d'étude élémentaires - Cours Privée le Capitole (2015)</p>
+                                                    <p class="timeline-text">BFEM — Cours Privé Galilée (2019)</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="experience padd-15">
-                                    <h3 class="title">Experience</h3>
+                                    <h3 class="title">Expériences</h3>
                                     <div class="row">
                                         <div class="timeline-box padd-15">
                                             <div class="timeline shadow-dark">
-                                                <!-- ===== timeline item ===== -->
-                                                <div class="timeline-item">
-                                                    <div class="circle-dot"></div>
-                                                    <h3 class="timeline-date">
-                                                        <i class="fa fa-calendar"></i> 2023 - 2024
-                                                    </h3>
-                                                    <h4 class="timeline-title">Projet universitaire</h4>
-                                                    <p class="timeline-text">Déploiement d'un système de communication unifiée dans un environnement multisites VoIP (Licence 2).
-                                                    </p>
-                                                </div>
-                                                <!-- ===== timeline item ===== -->
                                                 <div class="timeline-item">
                                                     <div class="circle-dot"></div>
                                                     <h3 class="timeline-date">
                                                         <i class="fa fa-calendar"></i> 2024 - 2025
                                                     </h3>
-                                                    <h4 class="timeline-title">Projet universitaire</h4>
-                                                    <p class="timeline-text">Analyse et implémentation du protocole SRP, Secure Remote Password (Licence 3).</p>
+                                                    <h4 class="timeline-title">Mémoire de Licence — Protocole SRP-6a</h4>
+                                                    <p class="timeline-text">Analyse et implémentation du protocole SRP (Secure Remote Password) avec Java, JavaFX et PostgreSQL. Intégration d'un benchmark de performance et simulation d'attaques.</p>
                                                 </div>
-                                                <!-- ===== timeline item ===== -->
-                                                <!-- <div class="timeline-item">
+                                                <div class="timeline-item">
                                                     <div class="circle-dot"></div>
                                                     <h3 class="timeline-date">
-                                                        <i class="fa fa-calendar"></i> 2022 - now
+                                                        <i class="fa fa-calendar"></i> 2023 - 2024
                                                     </h3>
-                                                    <h4 class="timeline-title">License en Informatique</h4>
-                                                    <p class="timeline-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat ea commodi
-                                                        sequi ab saepe velit aperiam aliquid, odit quibusdam at illum nulla, perspiciatis eaque pariatur a.
-                                                    </p>
-                                                </div> -->
+                                                    <h4 class="timeline-title">Projet universitaire — VoIP</h4>
+                                                    <p class="timeline-text">Déploiement d'un système de communication unifiée dans un environnement multisites VoIP (Licence 2).</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -247,6 +296,7 @@
                 </div>
             </section>
             <!-- ======= About Section End ======= -->
+
             <!-- ======= Services Section Start ======= -->
             <section class="service section" id="services">
                 <div class="container">
@@ -257,81 +307,80 @@
                     </div>
                     <div class="row">
                         <div class="rowL padd-15">
-                            <!-- ======= Services item Start -->
-                            <div class="service-item">
-                                <div class="service-item-inner">
-                                    <div class="icon">
-                                        <i class="fa fa-mobile-alt"></i>
-                                    </div>
-                                    <h4>Web Design</h4>
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad sint tempora architecto!</p>
-                                </div>
-                            </div>
-                            <!-- ======= Services item End -->
-                            <!-- ======= Services item Start -->
+                            <!-- Service 1 -->
                             <div class="service-item">
                                 <div class="service-item-inner">
                                     <div class="icon">
                                         <i class="fa fa-laptop-code"></i>
                                     </div>
-                                    <h4>Web Design</h4>
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad sint tempora architecto!</p>
+                                    <h4>Développement Web</h4>
+                                    <p>Conception et développement d'interfaces web modernes et responsives avec HTML, CSS et JavaScript. Intégration de frameworks comme Angular pour des SPAs performantes.</p>
                                 </div>
                             </div>
-                            <!-- ======= Services item End -->
+                            <!-- Service 2 -->
+                            <div class="service-item">
+                                <div class="service-item-inner">
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style="color: #EC1839FF">
+                                            <!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                                            <path d="M405.8 376.9C415.6 370.2 429.2 364.4 429.2 364.4C429.2 364.4 390.5 371.4 352 374.6C304.9 378.5 254.3 379.3 228.9 375.9C168.8 367.9 261.9 345.8 261.9 345.8C261.9 345.8 225.8 343.4 181.3 364.8C128.8 390.2 311.3 401.8 405.8 376.9zM320.4 344.8C301.4 302.1 237.3 264.6 320.4 199C424.1 117.2 370.9 64 370.9 64C392.4 148.5 295.3 174.1 260.2 226.6C236.3 262.5 271.9 301 320.4 344.8zM435 168.6C435.1 168.6 259.8 212.4 343.5 308.8C368.2 337.2 337 362.8 337 362.8C337 362.8 399.7 330.4 370.9 289.9C344 252.1 323.4 233.3 435 168.6zM428.9 439.1C428.4 440.1 427.7 440.9 426.9 441.7C555.2 408 508 322.8 446.7 344.4C443.4 345.6 440.5 347.8 438.5 350.7C442.1 349.4 445.8 348.4 449.5 347.7C480.5 341.2 525 389.2 428.9 439.1zM476 501.4C476 501.4 490.5 513.3 460.1 522.6C402.2 540.1 219.3 545.4 168.5 523.3C150.2 515.4 184.5 504.3 195.3 502C206.5 499.6 213 500 213 500C192.7 485.7 81.7 528.1 156.6 540.2C360.8 573.4 529 525.3 476 501.4zM252.5 460C173.8 482 300.4 527.4 400.6 484.5C390.8 480.7 381.4 476.1 372.4 470.7C327.7 479.2 307 479.8 266.4 475.2C232.9 471.4 252.5 460 252.5 460zM432.3 557.2C353.6 572 256.5 570.3 199 560.8C199 560.7 210.8 570.5 271.4 574.4C363.6 580.3 505.2 571.1 508.5 527.5C508.5 527.5 502.1 544 432.3 557.2zM388.7 417C329.5 428.4 295.2 428.1 251.9 423.6C218.4 420.1 240.3 403.9 240.3 403.9C153.5 432.7 288.5 465.3 409.8 429.8C402 427 394.8 422.7 388.7 417z"/>
+                                        </svg>
+<!--                                        <i class="fa-brands fa-java"></i>-->
+                                    </div>
+                                    <h4>Développement Java</h4>
+                                    <p>Développement d'applications backend robustes avec Java et Spring Boot. Expérience en JavaFX pour les interfaces desktop et gestion de la persistance avec Hibernate/JPA.</p>
+                                </div>
+                            </div>
                         </div>
                         <div class="rowR padd-15">
-                            <!-- ======= Services item Start -->
+                            <!-- Service 3 -->
                             <div class="service-item">
                                 <div class="service-item-inner">
                                     <div class="icon">
-                                        <i class="fa fa-code"></i>
+                                        <i class="fa fa-database"></i>
                                     </div>
-                                    <h4>Web Design</h4>
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad sint tempora architecto!</p>
+                                    <h4>Base de Données</h4>
+                                    <p>Modélisation et administration de bases de données relationnelles avec Oracle DB et PostgreSQL. Rédaction de requêtes SQL optimisées et gestion de schémas complexes.</p>
                                 </div>
                             </div>
-                            <!-- ======= Services item End -->
-                            <!-- ======= Services item Start -->
+                            <!-- Service 4 -->
                             <div class="service-item">
                                 <div class="service-item-inner">
                                     <div class="icon">
-                                        <i class="fa fa-search"></i>
+                                        <i class="fa fa-shield-alt"></i>
                                     </div>
-                                    <h4>Web Design</h4>
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad sint tempora architecto!</p>
+                                    <h4>Sécurité Applicative</h4>
+                                    <p>Sensibilisation aux enjeux de cybersécurité : protocoles d'authentification sécurisée (SRP-6a), analyse de vulnérabilités réseau et hardening de systèmes.</p>
                                 </div>
                             </div>
-                            <!-- ======= Services item End -->
                         </div>
                         <div class="row3 padd-15">
-                            <!-- ======= Services item Start -->
+                            <!-- Service 5 -->
                             <div class="service-item">
                                 <div class="service-item-inner">
                                     <div class="icon">
-                                        <i class="fa fa-bullhorn"></i>
+                                        <i class="fa fa-code-branch"></i>
                                     </div>
-                                    <h4>Web Design</h4>
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad sint tempora architecto!</p>
+                                    <h4>Gestion de Version</h4>
+                                    <p>Utilisation de Git et GitHub pour le versioning de projets, la collaboration en équipe et le déploiement continu via GitHub Pages ou GitHub Actions.</p>
                                 </div>
                             </div>
-                            <!-- ======= Services item End -->
-                            <!-- ======= Services item Start -->
+                            <!-- Service 6 -->
                             <div class="service-item">
                                 <div class="service-item-inner">
                                     <div class="icon">
-                                        <i class="fa fa-palette"></i>
+                                        <i class="fa fa-network-wired"></i>
                                     </div>
-                                    <h4>Web Design</h4>
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad sint tempora architecto!</p>
+                                    <h4>Réseaux & Systèmes</h4>
+                                    <p>Configuration de réseaux (VLAN, VoIP, VPN), administration Linux et simulation d'infrastructures réseau avec Cisco Packet Tracer (CCNA Security).</p>
                                 </div>
                             </div>
-                            <!-- ======= Services item End -->
                         </div>
                     </div>
                 </div>
             </section>
             <!-- ======= Services Section End ======= -->
+
             <!-- ======= Portfolio Section Start ======= -->
             <section class="portfolio section" id="portofolio">
                 <div class="container">
@@ -342,146 +391,181 @@
                     </div>
                     <div class="row">
                         <div class="portfolio-heading padd-15">
-                            <h2>My last Projects :</h2>
+                            <h2>Mes derniers projets :</h2>
                         </div>
                     </div>
                     <div class="row">
                         <div class="row-portfolio">
-                            <!-- ======= Portfolio item Start ======= -->
+
+                            <!-- Projet 1 -->
                             <div class="portfolio-item padd-15">
                                 <div class="portfolio-item-inner shadow-dark">
                                     <div class="portfolio-img">
-                                        <img src="img/portfolio/portfolio-1.jpg" alt="">
+                                        <img src="img/portfolio/portfolio-1.jpg" alt="Protocole SRP-6a">
+                                        <div class="portfolio-overlay">
+                                            <h4>Protocole SRP-6a</h4>
+                                            <p>Application Java/JavaFX d'authentification sécurisée avec simulation d'attaques et benchmark de performance.</p>
+                                            <a href="#" class="btn-overlay" target="_blank">
+                                                <i class="fab fa-github"></i> Voir sur GitHub
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- ======= Portfolio item end ======= -->
-                            <!-- ======= Portfolio item Start ======= -->
+
+                            <!-- Projet 2 -->
                             <div class="portfolio-item padd-15">
                                 <div class="portfolio-item-inner shadow-dark">
                                     <div class="portfolio-img">
-                                        <img src="img/portfolio/portfolio-2.jpg" alt="">
+                                        <img src="img/portfolio/portfolio-2.jpg" alt="Labo Cryptographie">
+                                        <div class="portfolio-overlay">
+                                            <h4>Lab Cryptographie JavaFX</h4>
+                                            <p>Application desktop implémentant AES, RSA, signatures numériques, hachage (SHA-256...) et Diffie-Hellman.</p>
+                                            <a href="#" class="btn-overlay" target="_blank">
+                                                <i class="fab fa-github"></i> Voir sur GitHub
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- ======= Portfolio item end ======= -->
-                            <!-- ======= Portfolio item Start ======= -->
+
+                            <!-- Projet 3 -->
                             <div class="portfolio-item padd-15">
                                 <div class="portfolio-item-inner shadow-dark">
                                     <div class="portfolio-img">
-                                        <img src="img/portfolio/portfolio-3.jpg" alt="">
+                                        <img src="img/portfolio/portfolio-3.jpg" alt="VoIP Multisites">
+                                        <div class="portfolio-overlay">
+                                            <h4>Système VoIP Multisites</h4>
+                                            <p>Déploiement d'une infrastructure de communication unifiée en environnement multisites (Licence 2).</p>
+                                            <a href="#" class="btn-overlay" target="_blank">
+                                                <i class="fab fa-github"></i> Voir sur GitHub
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- ======= Portfolio item end ======= -->
-                            <!-- ======= Portfolio item Start ======= -->
+
+                            <!-- Projet 4 -->
                             <div class="portfolio-item padd-15">
                                 <div class="portfolio-item-inner shadow-dark">
                                     <div class="portfolio-img">
-                                        <img src="img/portfolio/portfolio-4.jpg" alt="">
+                                        <img src="img/portfolio/portfolio-4.jpg" alt="Portfolio Web">
+                                        <div class="portfolio-overlay">
+                                            <h4>Portfolio Personnel</h4>
+                                            <p>Ce site portfolio — développé en HTML/CSS/JS avec style-switcher dynamique et thème dark/light.</p>
+                                            <a href="#" class="btn-overlay" target="_blank">
+                                                <i class="fab fa-github"></i> Voir sur GitHub
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- ======= Portfolio item end ======= -->
-                            <!-- ======= Portfolio item Start ======= -->
+
+                            <!-- Projet 5 -->
                             <div class="portfolio-item padd-15">
                                 <div class="portfolio-item-inner shadow-dark">
                                     <div class="portfolio-img">
-                                        <img src="img/portfolio/portfolio-5.jpg" alt="">
+                                        <img src="img/portfolio/portfolio-5.jpg" alt="Projet Angular">
+                                        <div class="portfolio-overlay">
+                                            <h4>Projet Angular</h4>
+                                            <p>Application web en Angular avec gestion de composants, routage, services HTTP et intégration d'une API REST.</p>
+                                            <a href="#" class="btn-overlay" target="_blank">
+                                                <i class="fab fa-github"></i> Voir sur GitHub
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- ======= Portfolio item end ======= -->
-                            <!-- ======= Portfolio item Start ======= -->
+
+                            <!-- Projet 6 -->
                             <div class="portfolio-item padd-15">
                                 <div class="portfolio-item-inner shadow-dark">
                                     <div class="portfolio-img">
-                                        <img src="img/portfolio/portfolio-6.jpg" alt="">
+                                        <img src="img/portfolio/portfolio-6.jpg" alt="Admin Oracle DB">
+                                        <div class="portfolio-overlay">
+                                            <h4>Administration Oracle DB</h4>
+                                            <p>Exercices avancés sur le schéma SCOTT : requêtes SQL complexes, optimisation, PL/SQL et gestion de schémas.</p>
+                                            <a href="#" class="btn-overlay" target="_blank">
+                                                <i class="fab fa-github"></i> Voir sur GitHub
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- ======= Portfolio item end ======= -->
+
                         </div>
                     </div>
                 </div>
             </section>
             <!-- ======= Portfolio Section End ======= -->
+
             <!-- ======= Contact Section Start ======= -->
             <section class="conctact section" id="contact">
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
-                            <h2>Contact Me</h2>
+                            <h2>Contact</h2>
                         </div>
                     </div>
-                    <h3 class="contact-title padd-15">Have You Any Questions ?</h3>
-                    <h4 class="contact-sub-title padd-15">I'M AT YOUR SERVICES</h4>
+                    <h3 class="contact-title padd-15">Une question ou une opportunité ?</h3>
+                    <h4 class="contact-sub-title padd-15">JE SUIS DISPONIBLE ET RÉACTIF</h4>
                     <div class="row">
                         <div class="row-contact">
-                            <!-- ======= Contact Info item start ======= -->
                             <div class="contact-info-item padd-15">
                                 <div class="icon"><i class="fa fa-phone"></i></div>
-                                <h4>Call me on</h4>
+                                <h4>Téléphone</h4>
                                 <p>+221 78 555 42 20</p>
                             </div>
-                            <!-- ======= Contact Info item end ======= -->
-                            <!-- ======= Contact Info item start ======= -->
                             <div class="contact-info-item padd-15">
                                 <div class="icon"><i class="fa fa-map-marker-alt"></i></div>
-                                <h4>Office</h4>
-                                <p>Starboy</p>
+                                <h4>Localisation</h4>
+                                <p>Dakar, Yeumbeul — Sénégal</p>
                             </div>
-                            <!-- ======= Contact Info item end ======= -->
-                            <!-- ======= Contact Info item start ======= -->
                             <div class="contact-info-item padd-15">
                                 <div class="icon"><i class="fa fa-envelope"></i></div>
                                 <h4>Email</h4>
                                 <p>alassanerekrek@gmail.com</p>
                             </div>
-                            <!-- ======= Contact Info item end ======= -->
-                            <!-- ======= Contact Info item start ======= -->
                             <div class="contact-info-item padd-15">
-                                <div class="icon"><i class="fa fa-globe-europe"></i></div>
-                                <h4>Website</h4>
-                                <p>starboy.com</p>
+                                <div class="icon"><i class="fab fa-github"></i></div>
+                                <h4>GitHub</h4>
+                                <p>github.com/alassane-diop</p>
                             </div>
-                            <!-- ======= Contact Info item end ======= -->
                         </div>
                     </div>
-                    <h3 class="contact-title padd-15">SEND ME A EMAIL</h3>
-                    <h4 class="contact-sub-title padd-15">I'M VERY RESPOSIVE TO MESSAGES</h4>
-                    <!-- ======= Contact Form ======= -->
+                    <h3 class="contact-title padd-15">ENVOYEZ-MOI UN MESSAGE</h3>
+                    <h4 class="contact-sub-title padd-15">JE RÉPONDS RAPIDEMENT</h4>
                     <div class="row">
                        <div class="contact-form padd-15">
                             <div class="row">
                                 <div class="form-item col-6 padd-15">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <input type="text" class="form-control" id="name" placeholder="Votre nom">
                                     </div>
                                 </div>
                                 <div class="form-item col-6 padd-15 row-contact-form">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Mail">
+                                        <input type="email" class="form-control" id="email" placeholder="Votre email">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-item col-12 padd-15">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                        <input type="text" class="form-control" id="subject" placeholder="Objet">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-item col-12 padd-15">
                                     <div class="form-group">
-                                        <textarea class="form-control" name="" id="" placeholder="Message"></textarea>
+                                        <textarea class="form-control" name="" id="" placeholder="Votre message"></textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-item col-12 padd-15">
-                                    <button type="submit" class="btn">Send Message</button>
+                                    <button type="submit" class="btn">Envoyer</button>
                                 </div>
                             </div>
                        </div>
@@ -494,6 +578,7 @@
         <!-- ======= Main Content End ======= -->
     </div>
     <!-- ======= Main Container end ======= -->
+
     <!-- ======= Style Switcher Start ======= -->
     <div class="style-switcher">
         <div class="style-switcher-toggler s-icon">
@@ -512,7 +597,7 @@
         </div>
     </div>
     <!-- ======= Style Switcher End ======= -->
-    <!-- ======= JS Files ======= -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/script.js" defer></script>
     <script src="js/style-switcher.js" defer></script>
